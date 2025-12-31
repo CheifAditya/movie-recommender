@@ -3,7 +3,7 @@ import numpy as np
 
 
 #Loading CSV
-movies_df = pd.read_csv(r"C:\Users\Aditya Singh\AI ML\PROJECT WORK\Dataset\tmdb_5000_movies.csv")
+movies_df = pd.read_csv("Dataset/tmdb_5000_movies.csv")
 
 #Data Cleaning because API will load data from original CSV
 movies_df["overview"] = movies_df["overview"].fillna('')
