@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Recommender</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <h1>Movie Recommendation System</h1>
+
+    <form method="post" action="/recommend-ui">
+        <input type="text" name="movie_name" placeholder="Enter movie name" required>
+        <button type="submit">Recommend</button>
+    </form>
+
+    {% if not_found %}
+    <p class="error"> Movie not found. Try another title.</p>
+    {% endif %}
+    {% if movies %}
+    <h2>Recommendations for "{{ search_movie }}"</h2>
+    <div class="cards-container">
+    {% for movie in movies %}
+        <div class="card">
+            <h3>{{ movie.title }}</h3>
+            <p>{{ movie.overview }}</p>
+        </div>
+    {% endfor %}
+    </div>
+    {% endif %}
+
+
+</body>
+</html>
