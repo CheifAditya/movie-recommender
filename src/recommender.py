@@ -14,7 +14,7 @@ movies_df["overview"] = movies_df["overview"].fillna('')
 import os
 import pickle
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 MODEL_DIR = os.path.join(BASE_DIR, "models")
 
 with open(os.path.join(MODEL_DIR, "vectorizer.pkl"), "rb") as f:
